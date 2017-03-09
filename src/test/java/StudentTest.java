@@ -71,6 +71,7 @@ public class StudentTest {
     @Test
     public void testSubmitHomework3(){ //testing for submitting HW for an unregistered course
         this.admin.createClass("Course1", 2017, "Instructor1", 10);
+        this.instructor.addHomework("Instructor1","Course1",  2017, "Homework 1", "First HW Assignment" );
         this.student.submitHomework("Student1", "Homework 1", "myAnswer", "Course1", 2017);
         assertFalse(this.student.hasSubmitted("Student1", "Homework 1", "Course1", 2017));
     }
@@ -78,6 +79,7 @@ public class StudentTest {
     @Test
     public  void testSubmitHomework4(){ //testing for submitting HW in a different year
         this.admin.createClass("Course1", 2018, "Instructor1", 10);
+        this.instructor.addHomework("Instructor1","Course1",  2018, "Homework 1", "First HW Assignment" );
         this.student.submitHomework("Student1", "Homework 1", "myAnswer", "Course1", 2018);
         assertFalse(this.student.hasSubmitted("Student1", "Homework 1", "Course1", 2018));
     }

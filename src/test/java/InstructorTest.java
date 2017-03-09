@@ -56,6 +56,7 @@ public class InstructorTest {
         assertTrue(this.instructor.getGrade("Course1", 2017, "Homework 1", "Student1") != null && this.instructor.getGrade("Course1", 2017, "Homework 1", "Student1") == 120 );
     }
 
+
     @Test //unassigned instructor
     public void testAssignGrade3() {
         this.admin.createClass("Course1", 2017, "Instructor1", 15);
